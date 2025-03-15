@@ -97,25 +97,25 @@ export default function Home() {
       <div className="relative">
         {/* Header section with full-width accent */}
         <div className="border-b border-purple-500/20 backdrop-blur-sm">
-          <div className="container mx-auto px-4 py-6">
+          <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
-              <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+              <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
                 Statical Nyx
               </h1>
-              <div className="flex items-center gap-6">
-                <nav className="flex items-center space-x-6">
-                  <div className="space-x-4">
+              <div className="flex items-center gap-4">
+                <nav className="flex items-center space-x-4">
+                  <div className="space-x-4 text-sm">
                     <Link href="/" className="text-purple-400">dApp</Link>
                     <Link href="/docs" className="text-gray-400 hover:text-purple-400 transition-colors">Documentation</Link>
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-3">
                     <a
                       href="https://twitter.com/StaticalNyx"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-purple-400 transition-colors transform hover:scale-110"
                     >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                       </svg>
                     </a>
@@ -125,7 +125,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-purple-400 transition-colors transform hover:scale-110"
                     >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                       </svg>
                     </a>
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
 
         {/* Main content with side decorations */}
-        <div className="container mx-auto px-4 py-8 relative">
+        <div className="container mx-auto px-4 py-6 relative">
           {/* Side decorations */}
           <div className="absolute left-0 top-0 w-32 h-full border-l border-purple-500/20 -ml-16 hidden lg:block">
             {/* Left side neural connections */}
@@ -147,7 +147,7 @@ export default function Home() {
                 <div key={i} 
                      className="absolute w-8 h-px bg-gradient-to-r from-purple-500/30 to-transparent"
                      style={{ top: `${20 + i * 20}%`, left: '16px', transform: 'rotate(-30deg)' }}>
-                  <div className="absolute right-0 w-1.5 h-1.5 bg-purple-400/50 rounded-full animate-pulse" 
+                  <div className="absolute right-0 w-1 h-1 bg-purple-400/50 rounded-full animate-pulse" 
                        style={{ animationDelay: `${i * 0.2}s` }}></div>
                 </div>
               ))}
@@ -160,22 +160,22 @@ export default function Home() {
                 <div key={i} 
                      className="absolute w-8 h-px bg-gradient-to-l from-blue-500/30 to-transparent"
                      style={{ top: `${20 + i * 20}%`, right: '16px', transform: 'rotate(30deg)' }}>
-                  <div className="absolute left-0 w-1.5 h-1.5 bg-blue-400/50 rounded-full animate-pulse" 
+                  <div className="absolute left-0 w-1 h-1 bg-blue-400/50 rounded-full animate-pulse" 
                        style={{ animationDelay: `${i * 0.2}s` }}></div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="space-y-8 max-w-[90vw] mx-auto">
+          <div className="space-y-6 max-w-[90vw] mx-auto">
             {/* Info box with hover effect */}
-            <div className="p-6 rounded-xl backdrop-blur-md bg-white/5 border border-purple-500/20 shadow-xl 
+            <div className="p-4 rounded-lg backdrop-blur-md bg-white/5 border border-purple-500/20 shadow-xl 
                           transform hover:scale-[1.02] transition-all duration-300 hover:shadow-purple-500/10">
-              <h2 className="text-2xl font-bold text-purple-400 mb-4 flex items-center">
+              <h2 className="text-lg font-bold text-purple-400 mb-3 flex items-center">
                 <span className="mr-2">// SYSTEM::INITIALIZE</span>
-                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"></div>
               </h2>
-              <div className="text-gray-300 leading-relaxed space-y-2">
+              <div className="text-gray-300 leading-relaxed space-y-1.5 text-sm">
                 <span className="block font-mono flex items-center">
                   <span className="text-purple-400 mr-2">{">"}</span>
                   <span className="typing-animation">Accessing quantum-secured blockchain protocol...</span>
@@ -188,7 +188,7 @@ export default function Home() {
                   <span className="mr-2">{">"}</span>
                   <span>STATUS: Advanced cryptographic interface ready</span>
                 </span>
-                <span className="block mt-4 flex items-center">
+                <span className="block mt-3 flex items-center text-xs">
                   <span className="text-purple-400 mr-2">▶</span>
                   Connect your neural link [Phantom Wallet] to access the encrypted matrix.
                 </span>
@@ -196,9 +196,9 @@ export default function Home() {
             </div>
 
             {/* dApp iframe with enhanced container */}
-            <div className="relative mt-12 -mx-8 lg:-mx-24 xl:-mx-32">
+            <div className="relative mt-8">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 transform -skew-y-2"></div>
-              <div className="relative w-full aspect-[21/9] rounded-xl overflow-hidden border border-purple-500/20 shadow-2xl backdrop-blur-md
+              <div className="relative w-full aspect-[21/9] rounded-lg overflow-hidden border border-purple-500/20 shadow-2xl backdrop-blur-md
                             transform hover:scale-[1.01] transition-all duration-300">
                 <iframe
                   src="https://app.nyxcipher.ai/projects"
@@ -212,14 +212,14 @@ export default function Home() {
         </div>
 
         {/* Enhanced footer */}
-        <footer className="border-t border-purple-500/20 backdrop-blur-sm mt-12">
-          <div className="container mx-auto px-4 py-6">
+        <footer className="border-t border-purple-500/20 backdrop-blur-sm mt-8">
+          <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
-              <p className="text-sm text-gray-500">Powered by Next.js and Solana Blockchain</p>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-100"></div>
-                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-200"></div>
+              <p className="text-xs text-gray-500">Powered by Next.js and Solana Blockchain</p>
+              <div className="flex items-center space-x-1.5">
+                <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"></div>
+                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse delay-100"></div>
+                <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse delay-200"></div>
               </div>
             </div>
           </div>
