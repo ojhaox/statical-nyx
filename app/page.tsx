@@ -122,7 +122,18 @@ export default function Home() {
                 href="/docs" 
                 className="px-3 py-2 text-sm sm:text-base rounded-md text-green-400 hover:text-green-300 hover:bg-green-500/10 transition-colors"
               >
-                Docs
+                Documentations
+              </Link>
+              <Link
+                href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=STCNYX"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-2 text-sm sm:text-base rounded-md bg-green-500/20 text-green-400 hover:bg-green-500/30 transition-colors flex items-center space-x-2"
+              >
+                <span>Buy $STCNYX</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </Link>
               <button
                 onClick={connectWallet}
@@ -139,7 +150,7 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-1 px-2 sm:px-4 lg:px-8 py-8">
+      <main className="flex-1 px-2 sm:px-4 lg:px-8 py-8 pt-24 sm:pt-28">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-8 sm:mb-12">
