@@ -202,11 +202,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* dApp Section */}
-          <div className="mt-8 -mx-4 sm:-mx-6 lg:-mx-8">
+          {/* Embedded dApp */}
+          <div className="mt-8 -mx-4 sm:-mx-6 lg:-mx-8 xl:-mx-12">
             <iframe
               src="https://app.nyxcipher.ai/projects"
-              className="w-full aspect-[21/9] rounded border border-green-500/20 bg-black/50 shadow-lg shadow-green-500/10"
+              className="w-full aspect-[21/9] rounded-none border-x-0 border-green-500/20 bg-black/50 shadow-lg shadow-green-500/10"
               allow="clipboard-write; web3; ethereum; solana"
               sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals"
             />
