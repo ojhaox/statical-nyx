@@ -203,7 +203,7 @@ export default function Home() {
           </div>
 
           {/* Embedded dApp */}
-          <div className="mt-8 -mx-4 sm:-mx-6 lg:-mx-8 xl:-mx-12">
+          <div className="mt-8 relative left-[50%] right-[50%] -translate-x-1/2 w-[100vw]">
             <iframe
               src="https://app.nyxcipher.ai/projects"
               className="w-full aspect-[21/9] rounded-none border-x-0 border-green-500/20 bg-black/50 shadow-lg shadow-green-500/10"
