@@ -196,16 +196,17 @@ export default function Home() {
               Statical Nyx Protocol_
               <span className="inline-block animate-blink">|</span>
             </h1>
-            <p className="font-mono text-green-400/70">
-              &gt; Quantum-secured cross-chain protocol for next-generation blockchain infrastructure_
-            </p>
+            <div className="space-y-2 font-mono text-green-400/70">
+              <p className="text-green-300">&gt; CA:</p>
+              <p className="pl-4">&gt; Quantum-secured cross-chain protocol for next-generation blockchain infrastructure_</p>
+            </div>
           </div>
 
           {/* dApp Section */}
-          <div className="mt-8 w-full">
+          <div className="mt-8 -mx-4 sm:-mx-6 lg:-mx-8">
             <iframe
               src="https://app.nyxcipher.ai/projects"
-              className="w-full aspect-[16/9] rounded border border-green-500/20 bg-black/50"
+              className="w-full aspect-[21/9] rounded border border-green-500/20 bg-black/50 shadow-lg shadow-green-500/10"
               allow="clipboard-write; web3; ethereum; solana"
               sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals"
             />
