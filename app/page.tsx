@@ -109,72 +109,28 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="border-b border-green-500/20 backdrop-blur-md bg-black/30 relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-green-500/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Left side - Logo and Name */}
-            <Link href="/" className="text-2xl font-mono font-bold text-green-400 tracking-tight">
-              <span className="inline-block transform hover:scale-105 transition-transform">
-                &lt;Statical_Nyx/&gt;
-              </span>
-            </Link>
-
-            {/* Center - Navigation Links */}
-            <div className="flex items-center gap-4">
-              <nav className="flex items-center space-x-4">
-                <div className="space-x-4 text-sm font-mono">
-                  <Link href="/" className="text-green-400 hover:text-green-300 transition-colors">[dApp]</Link>
-                  <Link 
-                    href="#" 
-                    className="px-3 py-1 rounded border border-green-500/20 text-green-400 hover:bg-green-500/10 
-                             transition-all duration-300 hover:border-green-400"
-                  >
-                    [Buy]
-                  </Link>
-                  <Link href="/docs" className="text-green-400/70 hover:text-green-300 transition-colors">[Docs]</Link>
-                </div>
-              </nav>
+            <div className="flex items-center">
+              <Link href="/" className="text-xl font-bold text-green-400 hover:text-green-300 transition-colors">
+                Statical Nyx
+              </Link>
             </div>
-
-            {/* Right side - Social Links and Wallet */}
-            <div className="flex items-center space-x-4">
-              {/* Social Links */}
-              <div className="flex items-center space-x-3">
-                <a
-                  href="https://twitter.com/StaticalNyx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-400/70 hover:text-green-300 transition-colors transform hover:scale-110"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
-                <a
-                  href="https://t.me/StaticalNyx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-400/70 hover:text-green-300 transition-colors transform hover:scale-110"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                  </svg>
-                </a>
-              </div>
-
-              {/* Wallet Connect Button */}
-              <button
-                onClick={isConnected ? disconnectWallet : connectWallet}
-                className="px-4 py-2 rounded border border-green-500/20 text-green-400 hover:bg-green-500/10 
-                         transition-all duration-300 hover:border-green-400 font-mono"
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <Link 
+                href="/docs" 
+                className="px-3 py-2 text-sm sm:text-base rounded-md text-green-400 hover:text-green-300 hover:bg-green-500/10 transition-colors"
               >
-                {isConnected ? (
-                  <span className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    <span>[{walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}]</span>
-                  </span>
-                ) : (
-                  '[Connect_Wallet]'
+                Docs
+              </Link>
+              <button
+                onClick={connectWallet}
+                className="px-3 py-2 text-sm sm:text-base rounded-md bg-green-500/20 text-green-400 hover:bg-green-500/30 transition-colors flex items-center space-x-2"
+              >
+                <span>{isConnected ? 'Connected' : 'Connect Wallet'}</span>
+                {isConnected && (
+                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                 )}
               </button>
             </div>
@@ -183,83 +139,83 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-1 px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 px-2 sm:px-4 lg:px-8 py-8">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-green-600 text-transparent bg-clip-text">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-green-400 to-green-600 text-transparent bg-clip-text">
               Statical Nyx Protocol
             </h1>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto px-4">
               Quantum-secured cross-chain protocol for next-generation blockchain infrastructure
             </p>
           </div>
 
           {/* Matrix-style Info Box */}
-          <div className="bg-black/30 border border-green-500/20 rounded-lg p-4 sm:p-6 mb-8 font-mono text-sm sm:text-base">
+          <div className="bg-black/30 border border-green-500/20 rounded-lg p-3 sm:p-4 lg:p-6 mb-6 sm:mb-8 font-mono text-xs sm:text-sm lg:text-base">
             <div className="text-green-400 mb-2">{'>'} SYSTEM::INITIALIZE</div>
             <div className="text-green-500">Statical Nyx Protocol_|</div>
             <div className="text-green-400 mt-2">{'>'} CA:</div>
-            <div className="text-green-500 ml-4">{'>'} Quantum-secured cross-chain protocol for next-generation blockchain infrastructure_</div>
+            <div className="text-green-500 ml-2 sm:ml-4">{'>'} Quantum-secured cross-chain protocol for next-generation blockchain infrastructure_</div>
           </div>
 
           {/* Embedded dApp */}
-          <div className="mt-8 relative left-[50%] right-[50%] -translate-x-1/2 w-[100vw] sm:w-[calc(100vw-2rem)] lg:w-[calc(100vw-4rem)]">
+          <div className="mt-6 sm:mt-8 relative left-[50%] right-[50%] -translate-x-1/2 w-[100vw] sm:w-[calc(100vw-2rem)] lg:w-[calc(100vw-4rem)]">
             <iframe
               src="https://app.nyxcipher.ai/projects"
-              className="w-full aspect-[21/9] rounded-none border-x-0 border-green-500/20 bg-black/50 shadow-lg shadow-green-500/10"
+              className="w-full aspect-[16/9] sm:aspect-[21/9] rounded-none border-x-0 border-green-500/20 bg-black/50 shadow-lg shadow-green-500/10"
               allow="clipboard-write; web3; ethereum; solana"
               sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals"
             />
           </div>
 
           {/* How to Use Section */}
-          <div className="mt-16 space-y-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-green-400 to-green-600 text-transparent bg-clip-text">
+          <div className="mt-12 sm:mt-16 space-y-6 sm:space-y-8">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-6 sm:mb-8 bg-gradient-to-r from-green-400 to-green-600 text-transparent bg-clip-text">
               How to Use
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
               {/* Step 1 */}
-              <div className="bg-black/30 border border-green-500/20 rounded-lg p-4 sm:p-6 hover:border-green-500/40 transition-colors">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 font-mono mr-3">1</div>
-                  <h3 className="text-lg font-semibold text-green-400">Connect Wallet</h3>
+              <div className="bg-black/30 border border-green-500/20 rounded-lg p-3 sm:p-4 lg:p-6 hover:border-green-500/40 transition-colors">
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 font-mono text-sm sm:text-base mr-2 sm:mr-3">1</div>
+                  <h3 className="text-base sm:text-lg font-semibold text-green-400">Connect Wallet</h3>
                 </div>
-                <p className="text-gray-300 text-sm sm:text-base">Install Phantom Wallet and connect it to access the dApp features.</p>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-300">Install Phantom Wallet and connect it to access the dApp features.</p>
               </div>
 
               {/* Step 2 */}
-              <div className="bg-black/30 border border-green-500/20 rounded-lg p-4 sm:p-6 hover:border-green-500/40 transition-colors">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 font-mono mr-3">2</div>
-                  <h3 className="text-lg font-semibold text-green-400">Select Project</h3>
+              <div className="bg-black/30 border border-green-500/20 rounded-lg p-3 sm:p-4 lg:p-6 hover:border-green-500/40 transition-colors">
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 font-mono text-sm sm:text-base mr-2 sm:mr-3">2</div>
+                  <h3 className="text-base sm:text-lg font-semibold text-green-400">Select Project</h3>
                 </div>
-                <p className="text-gray-300 text-sm sm:text-base">Browse through available projects and select one that interests you.</p>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-300">Browse through available projects and select one that interests you.</p>
               </div>
 
               {/* Step 3 */}
-              <div className="bg-black/30 border border-green-500/20 rounded-lg p-4 sm:p-6 hover:border-green-500/40 transition-colors">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 font-mono mr-3">3</div>
-                  <h3 className="text-lg font-semibold text-green-400">Review Details</h3>
+              <div className="bg-black/30 border border-green-500/20 rounded-lg p-3 sm:p-4 lg:p-6 hover:border-green-500/40 transition-colors">
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 font-mono text-sm sm:text-base mr-2 sm:mr-3">3</div>
+                  <h3 className="text-base sm:text-lg font-semibold text-green-400">Review Details</h3>
                 </div>
-                <p className="text-gray-300 text-sm sm:text-base">Check project specifications and requirements before proceeding.</p>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-300">Check project specifications and requirements before proceeding.</p>
               </div>
 
               {/* Step 4 */}
-              <div className="bg-black/30 border border-green-500/20 rounded-lg p-4 sm:p-6 hover:border-green-500/40 transition-colors">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 font-mono mr-3">4</div>
-                  <h3 className="text-lg font-semibold text-green-400">Execute Transaction</h3>
+              <div className="bg-black/30 border border-green-500/20 rounded-lg p-3 sm:p-4 lg:p-6 hover:border-green-500/40 transition-colors">
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 font-mono text-sm sm:text-base mr-2 sm:mr-3">4</div>
+                  <h3 className="text-base sm:text-lg font-semibold text-green-400">Execute Transaction</h3>
                 </div>
-                <p className="text-gray-300 text-sm sm:text-base">Confirm the transaction in your Phantom Wallet to complete the process.</p>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-300">Confirm the transaction in your Phantom Wallet to complete the process.</p>
               </div>
             </div>
 
             {/* Important Notes */}
-            <div className="mt-12 bg-black/30 border border-green-500/20 rounded-lg p-4 sm:p-6">
-              <h3 className="text-lg font-semibold text-green-400 mb-4">Important Notes</h3>
-              <ul className="space-y-2 text-sm sm:text-base text-gray-300">
+            <div className="mt-8 sm:mt-12 bg-black/30 border border-green-500/20 rounded-lg p-3 sm:p-4 lg:p-6">
+              <h3 className="text-base sm:text-lg font-semibold text-green-400 mb-3 sm:mb-4">Important Notes</h3>
+              <ul className="space-y-2 text-xs sm:text-sm lg:text-base text-gray-300">
                 <li>• Always verify transaction details before confirming</li>
                 <li>• Keep your wallet secure and never share private keys</li>
                 <li>• For support, contact our team at support@nyxcipher.ai</li>
